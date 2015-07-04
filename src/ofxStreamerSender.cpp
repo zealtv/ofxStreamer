@@ -3,7 +3,7 @@
 //  x264Example
 //
 //
-
+#pragma once
 #include "ofxStreamerSender.h"
 
 
@@ -119,7 +119,7 @@ void ofxStreamerSender::setup(int _width, int _height, string destination_ip, in
     avcodec_open2(mCodecContext, mCodec, NULL);
 
     // write the header
-    int error = avformat_write_header(mFormatContext, nil);
+    int error = avformat_write_header(mFormatContext, NULL);
     if(error < 0){
         cout<<"Error avformat_write_header "<<error<<endl;
     }

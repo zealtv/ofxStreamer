@@ -55,16 +55,21 @@ public:
     
     
     //ofBaseVideoDraws
-    ofPixels& 			getPixels();
-    const ofPixels&		getPixels() const;
+    //ofPixels& 			getPixels();
+ //   unsigned char&      getPixels();
+ //   const ofPixels&		getPixels() const;
+    /*ofPixels_<unsigned char>& getPixels();
+    ofPixels_<unsigned char>& getPixels() const;*/
+    unsigned char* getPixels();
+    unsigned char* getPixels() const;
     
     bool isFrameNew() const;
 
-    bool isInitialized() const {};
+    //bool isInitialized() const {};
     
-    bool setPixelFormat(ofPixelFormat pixelFormat) {}
+    //bool setPixelFormat(ofPixelFormat pixelFormat) {}
     
-    ofPixelFormat getPixelFormat() const {}
+    //ofPixelFormat getPixelFormat() const {}
     
     
     void draw(float x, float y) const;
@@ -80,10 +85,10 @@ public:
     
     void setUseTexture(bool bUseTex) {};
     
-    bool isUsingTexture() const {};
+    //bool isUsingTexture() const {};
     
-    vector<ofTexture> & getTexturePlanes(){};
-    const vector<ofTexture> & getTexturePlanes() const{};
+    //vector<ofTexture> & getTexturePlanes(){};
+   // const vector<ofTexture> & getTexturePlanes() const{};
 
 
 
@@ -102,7 +107,7 @@ private:
     
     long long           lastReceiveTime;
     
-    ofImage *           lastFrame;
+    ofImage*            lastFrame;
     int                 encodedFrameSize;
     
     void                threadedFunction();

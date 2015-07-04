@@ -3,7 +3,6 @@
 //
 //
 
-
 #include "ofxStreamerReceiver.h"
 
 using namespace std;
@@ -261,25 +260,31 @@ float ofxStreamerReceiver::getHeight() const {
 
 
 //---------------------------------------------------------------------------
-ofPixels & ofxStreamerReceiver::getPixels(){
+/*ofPixels& ofxStreamerReceiver::getPixels(){
+    return lastFrame->getPixels();
+}*/
+
+unsigned char*  ofxStreamerReceiver::getPixels(){
     return lastFrame->getPixels();
 }
 
 //---------------------------------------------------------------------------
-const ofPixels & ofxStreamerReceiver::getPixels() const{
+/*const ofPixels& ofxStreamerReceiver::getPixels() const{
+    return lastFrame->getPixels();
+}*/
+unsigned char* ofxStreamerReceiver::getPixels() const{
     return lastFrame->getPixels();
 }
 
-
-ofTexture & ofxStreamerReceiver::getTexture(){
+ofTexture& ofxStreamerReceiver::getTexture(){
     if(allocated){
-        return lastFrame->getTexture();
+        return lastFrame->getTextureReference();
     }
 }
 
-const ofTexture & ofxStreamerReceiver::getTexture() const {
+const ofTexture& ofxStreamerReceiver::getTexture() const {
     if(allocated){
-        return lastFrame->getTexture();
+        return lastFrame->getTextureReference();
     }
 }
 

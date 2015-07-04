@@ -11,7 +11,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <unistd.h>
-#include <vector.h>
+//#include <vector.h>
+#include <vector>
 
 extern "C" {
 #include <x264.h>
