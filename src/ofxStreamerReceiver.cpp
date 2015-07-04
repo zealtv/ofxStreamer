@@ -282,10 +282,9 @@ ofTexture& ofxStreamerReceiver::getTexture(){
     }
 }
 
-const ofTexture& ofxStreamerReceiver::getTexture() const {
-    if(allocated){
+const ofTexture& ofxStreamerReceiver::getTexture() const {
+    if(allocated)
+    {
         return lastFrame->getTextureReference();
     }
 }
-
-
